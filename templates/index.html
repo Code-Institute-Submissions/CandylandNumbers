@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Historical Bookings</title>
+  <link rel="stylesheet" href="{{ url_for ('static',
+    filename='lib/css/bootstrap.min.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static',
+    filename='lib/css/keen-dashboards.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
+  <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+</head>
+<body class="application">
+  <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="./">Historical Bookings</a>
+      </div>
+    </div>
+  </div>
+  <div  id="outer" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="row">
+
+          <!-- Time Chart -->
+          <div class="col-sm-12">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Number of Bookings
+              </div>
+              <div class="chart-stage">
+                <div id="time-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Time Chart -->
+
+          <!-- Event Type -->
+          <div class="col-sm-6">
+            <div class="chart-wrapper">
+              <div class="chart-title">
+                Event Type
+              </div>
+              <div class="chart-stage">
+                <div id="event-type-row-chart"></div>
+              </div>
+            </div>
+          </div>
+          <!-- Event Type -->
+
+      <!-- menu select -->
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Region
+          </div>
+          <div class="chart-stage">
+            <div id="menu-select"></div>
+          </div>
+        </div>
+      </div>
+      <!-- menu select -->
+
+      <!-- Metric 1 -->
+      <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Number Of Events Attended
+          </div>
+          <div class="chart-stage" style="background: #33CC99;
+            position: relative;
+            font-size: 29px;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 0px;">
+            <div id="number-bookings-nd"></div>
+          </div>
+        </div>
+      </div>
+      <!-- Metric 1 -->
+            <div class="col-sm-6">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            Number Of Guests Served
+          </div>
+          <div class="chart-stage" style="background: #33CC99;
+            position: relative;
+            font-size: 29px;
+            color: white;
+            vertical-align: middle;
+            text-align: center;
+            padding-top: 12px;
+            padding-bottom: 0px;">
+            <div id="total-guests-nd"></div>
+          </div>
+        </div>
+      </div>
+
+            <div class="chart-stage">
+                   <button class="col-sm-6 btn-danger" type="button" onclick="dc.filterAll();dc.redrawAll();resetofs()">Reset All Filters</button>
+               </div>
+            </div>
+        </div>
+    </div>
+  </div>
+  <hr>
+  <p class="small text-muted"> Data viz &#9829; from Candyland Cart Company</p>
+  <script src="{{ url_for ('static', filename='lib/js/jquery.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/bootstrap.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/crossfilter.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/d3.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/dc.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
+  <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
+  <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+</body>
+</html>
