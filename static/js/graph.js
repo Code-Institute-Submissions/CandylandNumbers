@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.json, "/candyNumbers/numbers")
+    .defer(d3.json, "/new_candyland_numbers")
     .await(makeGraphs);
 
 function makeGraphs(error, numbers) {
