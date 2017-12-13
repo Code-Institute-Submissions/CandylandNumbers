@@ -16,7 +16,6 @@ function makeGraphs(error, numbers) {
         d["number_of_guests"] = +d["number_of_guests"];
     });
 
-
     //Create a Crossfilter instance
     var ndx = crossfilter(numbers);
 
@@ -33,17 +32,20 @@ function makeGraphs(error, numbers) {
     var numberOfGuestsDim = ndx.dimension(function (d) {
         return d["number_of_guests"];
     });
+    var numberOfBookingsDim = ndx.dimension(function (d) {
+        return d["number_of_bookings"];
+    });
 
 
     //Calculate metrics
     var numBookingsByDate = dateDim.group();
     var numBookingsByEventType = eventTypeDim.group();
     var numGuestsServed = numberOfGuestsDim.group();
-
+    var numberOfBookings = numberOfBookingsDim.group();
     var regionGroup = regionDim.group();
 
     var all = ndx.groupAll();
-    var totalGuests = ndx.groupAll().reduceSum(function (d) {
+    var totalGuests = all.reduceSum(function (d) {
         return d["number_of_guests"];
     });
 
@@ -68,14 +70,14 @@ function makeGraphs(error, numbers) {
         .valueAccessor(function (d) {
             return d;
         })
-        .group(all);
+        .group(numberOfBookings);
 
     totalGuestsND
         .formatNumber(d3.format("d"))
         .valueAccessor(function (d) {
             return d;
         })
-        .group(numGuestsServed)
+        .group(all)
         .formatNumber(d3.format(".3s"));
 
     timeChart
