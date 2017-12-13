@@ -8,12 +8,14 @@
     filename='lib/css/keen-dashboards.css')}}">
   <link rel="stylesheet" href="{{ url_for ('static', filename='lib/css/dc.css')}}">
   <link rel="stylesheet" href="{{ url_for ('static', filename='css/custom.css')}}">
+    <link rel="stylesheet" href="{{url_for ('static', filename='lib/css/introjs.css')}}" />
 </head>
 <body class="application">
   <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="./">Historical Bookings</a>
+          <button class="intro_button" type="button" autofocus onclick="javascript:introJs().start();">How to read this data ...</button>
       </div>
     </div>
   </div>
@@ -24,7 +26,8 @@
 
           <!-- Time Chart -->
           <div class="col-sm-12">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" data-step="1" data-intro="This line graph shows the number of bookings / events we have attende over the
+given time period. You can select a particulat time period by clicking and dragging withn the chart" style="font-weight: normal" data-position="right">
               <div class="chart-title">
                 Number of Bookings
               </div>
@@ -37,7 +40,8 @@
 
           <!-- Event Type -->
           <div class="col-sm-6">
-            <div class="chart-wrapper">
+            <div class="chart-wrapper" data-step="2" data-intro="This section shows the type of events we have attended. Click on any of the events to see
+how many of just that event we have catered for." style="font-weight: normal" data-position="right">
               <div class="chart-title">
                 Event Type
               </div>
@@ -50,7 +54,9 @@
 
       <!-- menu select -->
       <div class="col-sm-6">
-        <div class="chart-wrapper">
+        <div class="chart-wrapper"data-step="3" data-intro="This section shows just where in the country we have been.
+to reset, simply select 'ALL'" style="font-weight: normal" data-position="right"
+>
           <div class="chart-title">
             Region
           </div>
@@ -63,7 +69,8 @@
 
       <!-- Metric 1 -->
       <div class="col-sm-6">
-        <div class="chart-wrapper">
+        <div class="chart-wrapper"data-step="4" data-intro="Here we can see the number of events we have catered for in total" style="font-weight: normal" data-position="right"
+>
           <div class="chart-title">
             Number Of Events Attended
           </div>
@@ -81,7 +88,8 @@
       </div>
       <!-- Metric 1 -->
             <div class="col-sm-6">
-        <div class="chart-wrapper">
+        <div class="chart-wrapper"data-step="5" data-intro="Here you will see just how many individual people we have ACTUALLY served. WOW!" style="font-weight: normal" data-position="right"
+>
           <div class="chart-title">
             Number Of Guests Served
           </div>
@@ -115,5 +123,6 @@
   <script src="{{ url_for ('static', filename='lib/js/queue.js')}}"></script>
   <script src="{{ url_for ('static', filename='lib/js/keen.min.js')}}"></script>
   <script src="{{ url_for ('static', filename='js/graph.js')}}"></script>
+  <script src="{{url_for ('static', filename='lib/js/intro.js')}}" type="text/javascript"></script>
 </body>
 </html>
