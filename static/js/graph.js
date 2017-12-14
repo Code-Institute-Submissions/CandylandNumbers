@@ -2,7 +2,7 @@ queue()
     .defer(d3.json, "/new_candyland_numbers")
     .await(makeGraphs);
 
-function makeGraphs(error, numbers) {
+function makeGraphs(error, new_candyland_numbers) {
     if (error) {
         console.error("makeGraphs error on receiving dataset:", error.statusText);
         throw error;
@@ -10,14 +10,17 @@ function makeGraphs(error, numbers) {
 
     //Clean bookingsNumbers data
     var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
-    numbers.forEach(function (d) {
+    new_candyland_numbers.forEach(function (d) {
         d["date_of_event"] = dateFormat.parse(d["date_of_event"]);
+        d["date_of_event"].setDate(1);
         d["number_of_bookings"] = +d["number_of_bookings"];
         d["number_of_guests"] = +d["number_of_guests"];
+        d.year = d.date_of_event.getFullYear();
+
     });
 
     //Create a Crossfilter instance
-    var ndx = crossfilter(numbers);
+    var ndx = crossfilter(new_candyland_numbers);
 
     //Define Dimensions
     var dateDim = ndx.dimension(function (d) {
@@ -40,7 +43,7 @@ function makeGraphs(error, numbers) {
     //Calculate metrics
     var numBookingsByDate = dateDim.group();
     var numBookingsByEventType = eventTypeDim.group();
-    var numGuestsServed = numberOfGuestsDim.group();
+    var guestsServed = numberOfGuestsDim.group();
     var numberOfBookings = numberOfBookingsDim.group();
     var regionGroup = regionDim.group();
 
@@ -70,14 +73,14 @@ function makeGraphs(error, numbers) {
         .valueAccessor(function (d) {
             return d;
         })
-        .group(numberOfBookings);
+        .group(all);
 
     totalGuestsND
         .formatNumber(d3.format("d"))
         .valueAccessor(function (d) {
             return d;
         })
-        .group(all)
+        .group(guestsServed)
         .formatNumber(d3.format(".3s"));
 
     timeChart

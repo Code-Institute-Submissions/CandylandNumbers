@@ -25,60 +25,63 @@
         <div class="row">
 
           <!-- Time Chart -->
-          <div class="col-sm-12">
-            <div class="chart-wrapper" data-step="1" data-intro="This line graph shows
+            <div class="col-sm-12">
+                <div class="chart-wrapper" data-step="1" data-intro="This line graph shows
             the number of bookings / events we have attended over a given time period.
             You can select a particular time period by clicking and dragging within the
             chart" style="font-weight: normal" data-position="right">
-              <div class="chart-title">
-                Number of Bookings
-              </div>
-              <div class="chart-stage">
-                <div id="time-chart"></div>
-              </div>
+                    <div class="chart-title">
+                        Number of Bookings
+                    </div>
+                    <div class="chart-stage">
+                        <div id="time-chart"></div>
+                    </div>
+                </div>
             </div>
-          </div>
+
           <!-- Time Chart -->
 
           <!-- Event Type -->
-          <div class="col-sm-6">
-            <div class="chart-wrapper" data-step="2" data-intro="This section
+
+            <div class="col-sm-6">
+                <div class="chart-wrapper" data-step="2" data-intro="This section
             shows the type of events we have attended. Click on any of the events
             to see how many of just that event we have catered for." style="font-weight: normal" data-position="right">
-              <div class="chart-title">
-                Event Type
-              </div>
-              <div class="chart-stage">
-                <div id="event-type-row-chart"></div>
-              </div>
+                    <div class="chart-title">
+                        Event Type
+                    </div>
+                    <div class="chart-stage">
+                        <div id="event-type-row-chart"></div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <!-- Event Type -->
 
-      <!-- menu select -->
-      <div class="col-sm-6">
-        <div class="chart-wrapper" data-step="3" data-intro="This section
-        shows just where in the UK we have been. To reset, simply
-        select 'ALL'" style="font-weight: normal" data-position="right">
-          <div class="chart-title">
-            Region
-          </div>
-          <div class="chart-stage">
-            <div id="menu-select"></div>
-          </div>
-        </div>
-      </div>
-      <!-- menu select -->
+            <!-- Event Type -->
 
-      <!-- Metric 1 -->
-      <div class="col-sm-6">
-        <div class="chart-wrapper" data-step="4" data-intro="Here we can
+            <!-- region -->
+
+            <div class="col-sm-6">
+                <div class="chart-wrapper" data-step="3" data-intro="This section
+                shows just where in the UK we have been. To reset, simply
+                select 'ALL'" style="font-weight: normal" data-position="right">
+                    <div class="chart-title">Region</div>
+                    <div class="chart-stage">
+                        <div id="menu-select"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- region -->
+
+            <!-- Number Of Bookings -->
+            <div class="col-sm-6">
+                <div class="chart-wrapper" data-step="4" data-intro="Here we can
         see the number of events we have catered for in
         total" style="font-weight: normal" data-position="right">
-          <div class="chart-title">
-            Number Of Events Attended
-          </div>
-          <div class="chart-stage" style="background: #33CC99;
+                    <div class="chart-title">
+                        Number Of Events Attended
+                    </div>
+                    <div class="chart-stage" style="background: #33CC99;
             position: relative;
             font-size: 29px;
             color: white;
@@ -86,20 +89,24 @@
             text-align: center;
             padding-top: 12px;
             padding-bottom: 0px;">
-            <div id="number-bookings-nd"></div>
-          </div>
-        </div>
-      </div>
-      <!-- Metric 1 -->
+                        <div id="number-bookings-nd"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number Of Bookings -->
+
+            <!-- Number Of Guests Served -->
+
             <div class="col-sm-6">
-        <div class="chart-wrapper" data-step="5" data-intro="Here
+                <div class="chart-wrapper" data-step="5" data-intro="Here
         you will see just how many individual people we have
         ACTUALLY served. WOW! That's a lot of
         sweets!" style="font-weight: normal" data-position="right">
-          <div class="chart-title">
-            Number Of Guests Served
-          </div>
-          <div class="chart-stage" style="background: #33CC99;
+                    <div class="chart-title">
+                        Number Of Guests Served
+                    </div>
+                    <div class="chart-stage" style="background: #33CC99;
             position: relative;
             font-size: 29px;
             color: white;
@@ -107,16 +114,22 @@
             text-align: center;
             padding-top: 12px;
             padding-bottom: 0px;">
-            <div id="total-guests-nd"></div>
-          </div>
-        </div>
-      </div>
+                        <div id="total-guests-nd"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Number Of Guests Served -->
+
+            <!-- Reset Stats -->
 
             <div class="chart-stage">
                    <button class="col-sm-6 btn-danger" type="button" onclick="dc.filterAll();dc.redrawAll();resetofs()">Reset All Filters</button>
                </div>
-            </div>
+
+            <!-- Reset Stats -->
         </div>
+      </div>
     </div>
   </div>
   <hr>
