@@ -12,10 +12,8 @@ function makeGraphs(error, new_candyland_numbers) {
     var dateFormat = d3.time.format("%Y-%m-%d %H:%M:%S");
     new_candyland_numbers.forEach(function (d) {
         d["date_of_event"] = dateFormat.parse(d["date_of_event"]);
-        d["date_of_event"].setDate(1);
         d["number_of_bookings"] = +d["number_of_bookings"];
         d["number_of_guests"] = +d["number_of_guests"];
-        d.year = d.date_of_event.getFullYear();
 
     });
 
@@ -73,15 +71,15 @@ function makeGraphs(error, new_candyland_numbers) {
         .valueAccessor(function (d) {
             return d;
         })
-        .group(all);
+        .group(numberOfBookings)
+        .formatNumber(d3.format(".3s"));
 
     totalGuestsND
         .formatNumber(d3.format("d"))
         .valueAccessor(function (d) {
             return d;
         })
-        .group(guestsServed)
-        .formatNumber(d3.format(".3s"));
+        .group(all);
 
     timeChart
         .ordinalColors(["#C96A23"])
