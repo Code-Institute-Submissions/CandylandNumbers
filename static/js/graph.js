@@ -46,9 +46,6 @@ function makeGraphs(error, new_candyland_numbers) {
     var regionGroup = regionDim.group();
 
     var all = ndx.groupAll();
-    var totalGuests = all.reduceSum(function (d) {
-        return d["number_of_guests"];
-    });
 
     //Define values (to be used in charts)
     var minDate = dateDim.bottom(1)[0]["date_of_event"];
@@ -71,8 +68,7 @@ function makeGraphs(error, new_candyland_numbers) {
         .valueAccessor(function (d) {
             return d;
         })
-        .group(numberOfBookings)
-        .formatNumber(d3.format(".3s"));
+        .group(all);
 
     totalGuestsND
         .formatNumber(d3.format("d"))
