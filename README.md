@@ -13,9 +13,23 @@ is more intractive and appealing than just a list of numbers.
 
 ## Tech used:
 
+<<<<<<< HEAD
 This app uses the folowing tech to make things work:
 * Flask is used to provide the framework
 * Python is used to control views and interact with an external database
 * Bootstrap is used to keep things clean and responsive
 * Intro.js gives an . nice little tutorial on how to read the data
 * 
+=======
+This app uses the following tech to make things work:
+* Flask is used to provide the framework
+* Python is used to control views and interact with an external database
+* Bootstrap is used to keep things clean and responsive
+* Intro.js gives a nice little tutorial on how to read the data (Many thaks to Afshin Mehrabani (@afshinmeh) for the work put into
+this lovely little piece of magc!!)
+* MongoDB to store and serve the data being presented and filtered
+* D3.js renders interactive charts and graphs based on the data being served
+* Dc.js acts as a wrapper library for D3.js making potting charts and graphs easier
+
+
+>>>>>>> 6670671e9e1d600b9c2d5c87b39aeee32e0973cd
