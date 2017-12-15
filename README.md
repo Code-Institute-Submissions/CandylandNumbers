@@ -1,4 +1,4 @@
-# Stream 3 Project - Candyland Numbers
+# Stream 2 Project - Candyland Numbers
 
 ### What does this app do?
 
@@ -13,14 +13,6 @@ is more intractive and appealing than just a list of numbers.
 
 ## Tech used:
 
-<<<<<<< HEAD
-This app uses the folowing tech to make things work:
-* Flask is used to provide the framework
-* Python is used to control views and interact with an external database
-* Bootstrap is used to keep things clean and responsive
-* Intro.js gives an . nice little tutorial on how to read the data
-* 
-=======
 This app uses the following tech to make things work:
 * Flask is used to provide the framework
 * Python is used to control views and interact with an external database
@@ -31,5 +23,3 @@ this lovely little piece of magc!!)
 * D3.js renders interactive charts and graphs based on the data being served
 * Dc.js acts as a wrapper library for D3.js making potting charts and graphs easier
 
-
->>>>>>> 6670671e9e1d600b9c2d5c87b39aeee32e0973cd
