@@ -23,3 +23,7 @@ this lovely little piece of magc!!)
 * D3.js renders interactive charts and graphs based on the data being served
 * Dc.js acts as a wrapper library for D3.js making potting charts and graphs easier
 
+## See the code in action here: -> https://polar-caverns-91455.herokuapp.com/
+
+## Please feel free (if you are so inclined) to clone this repository and make ANY improvements
+
