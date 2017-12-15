@@ -2,7 +2,7 @@
 
 ### What does this app do?
 
-A visual display of historical booking information for fictional company that provides candy carts for weddings, parties etc.
+A visual display of historical booking information for fictional company that provides Candy Carts for weddings, parties etc.
 
 This is the final project for Stream 2 and is used to display boring information in a slightly more appealing way.
 
